@@ -113,7 +113,7 @@ class Phantoman extends \Codeception\Platform\Extension
         }
 
         // Wait till the server is reachable before continuing
-        $max_checks = 10;
+        $max_checks = isset($this->config['max_checks']) ? $this->config['max_checks'] : 10;
         $checks = 0;
 
         $this->write("Waiting for the PhantomJS server to be reachable");
